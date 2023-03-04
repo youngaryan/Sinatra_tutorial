@@ -1,4 +1,6 @@
 require 'sinatra'
+set :views, File.dirname(__FILE__) + "/views"
+
 
 IMAGES = [
   {title: "Programmer", url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAZpdMyuDahkrU01rONtOS8p1ItTdJb_5Ncg&usqp=CAU"},
@@ -12,6 +14,6 @@ end
 
 get "/images/:index" do |index|
   @image = IMAGES[index.to_i]
-  erb :image
+  erb :show_image
 end
 
